@@ -14,9 +14,13 @@ class CreateDocumentTable extends Migration
     {
         Schema::create('documents', function(Blueprint $table) {
             $table->increments('id');
+
+            $table->string('uuid');
             $table->string('title');
             $table->string('number');
             $table->string('year');
+        
+            $table->timestamps();
         });
     }
 

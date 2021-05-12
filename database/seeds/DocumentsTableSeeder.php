@@ -12,6 +12,6 @@ class DocumentsTableSeeder extends Seeder
      */ 
     public function run()
     {
-        factory(App\Person::class, 10)->create();
+        factory(App\Document::class, 10)->create();
     }
 }

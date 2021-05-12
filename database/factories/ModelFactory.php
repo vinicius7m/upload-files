@@ -22,8 +22,9 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Document::class, function(Faker\Generator $faker) {
     return [
+        'uuid' => $faker->uuid,
         'title' => $faker->title,
         'number' => $faker->randomNumber(6),
-        'year' => $faker->year($max = now), 
+        'year' => $faker->year($max = 'now'), 
     ];
 });

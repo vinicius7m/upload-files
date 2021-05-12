@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get(['prefix' => 'admin'], function() {
-    Route::get(['prefix' => 'document'], function() {
-        Route::get('/', 'DocumentController@index')->name(admin.document.index);
-    });
-});
+// Route::get(['prefix' => 'admin'], function() {
+//     Route::get(['prefix' => 'document'], function() {
+//         Route::get('/', 'DocumentController@index')->name(admin.document.index);
+//     });
+// });

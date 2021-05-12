@@ -12,10 +12,6 @@ class DocumentsTableSeeder extends Seeder
      */ 
     public function run()
     {
-        DB::table('documents')->insert([
-            'title' => str_random(10),
-            'number' => str_random(6),
-            'year' => str_random(4),
-        ]);
+        factory(App\Person::class, 10)->create();
     }
 }

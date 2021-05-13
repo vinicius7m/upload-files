@@ -20,3 +20,6 @@ Route::get('/', function () {
 //         Route::get('/', 'DocumentController@index')->name(admin.document.index);
 //     });
 // });
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

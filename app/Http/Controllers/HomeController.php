@@ -28,6 +28,15 @@ class HomeController extends Controller
     }
 
     public function upload() {
-        dd(\Request::all());
+        $document = \Request::file('documento');
+
+        $userUuid = \Request::get('userUuid');
+
+        // 'public' is a directory of root Laravel app
+        $publicPath = public_path().'/documents/'.$userUuid;
+
+        $fileName = $document->getClientOriginalName();
+
+        $document->move($publicPath, $document);
     }
 }

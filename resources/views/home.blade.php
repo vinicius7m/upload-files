@@ -15,7 +15,7 @@
 
                     <input id="fileupload" type="file" name="documento"
                     data-token="{!! csrf_token() !!}"
-                    data-user-uuid="{!! Auth::user()->uuid !!}">
+                    data-user-id="{!! Auth::user()->id !!}">
 
                     </span>
                     <br>
@@ -44,7 +44,7 @@
             $fileupload.fileupload({
                 url: '/upload',
                 dataType: 'json',
-                formData: {_token: $fileupload.data('token'), userUuid: $fileupload.data('userUuid')},
+                formData: {_token: $fileupload.data('token'), userId: $fileupload.data('userId')},
                 done: function (e, data) {},
                 progressall: function (e, data) {
                     var progress = parseInt(data.loaded / data.total * 100, 10);

@@ -13,4 +13,9 @@ class Document extends Model
         'uuid', 'title', 'number', 'year'
     ];
 
+    // RELATIONSHIP
+    public function user() {
+        return $this->belongsTo('App\User', 'user_id');
+    }
+
 }

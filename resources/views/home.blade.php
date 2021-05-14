@@ -44,7 +44,7 @@
             $fileupload.fileupload({
                 url: '/upload',
                 dataType: 'json',
-                formData: {_token: $fileupload.data('token'), useruuid: $fileupload.data('userUuid')},
+                formData: {_token: $fileupload.data('token'), userUuid: $fileupload.data('userUuid')},
                 done: function (e, data) {},
                 progressall: function (e, data) {
                     var progress = parseInt(data.loaded / data.total * 100, 10);

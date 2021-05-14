@@ -15,11 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get(['prefix' => 'admin'], function() {
-//     Route::get(['prefix' => 'document'], function() {
-//         Route::get('/', 'DocumentController@index')->name(admin.document.index);
-//     });
-// });
+
+Route::post('upload', ['as' => 'files.upload', 'uses' => 'HomeController@upload']);
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');

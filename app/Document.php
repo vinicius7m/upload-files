@@ -10,7 +10,7 @@ class Document extends Model
     protected $table = 'documents';
 
     protected $fillable = [
-        'title', 'number', 'year'
+        'uuid', 'title', 'number', 'year'
     ];
 
 }

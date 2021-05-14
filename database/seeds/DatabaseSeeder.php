@@ -22,6 +22,7 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         $user = new \App\User();
+        $user->uuid = 'd3d29d70-1d25-11e3-8591-034165a3a613';
         $user->name = 'Fabio Vedovelli';
         $user->email = 'vedovelli@gmail.com';
         $user->password = bcrypt('123456');
@@ -30,6 +31,7 @@ class UserTableSeeder extends Seeder
         $i = 0;
         while ($i < 10) {
             $user = new \App\User();
+            $user->uuid = $i.'3d29d70-1d25-11e3-8591-034165a3a613';
             $user->name = 'Fabio Vedovelli';
             $user->email = $i . 'vedovelli@gmail.com';
             $user->password = bcrypt('123456');

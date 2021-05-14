@@ -24,7 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $userId = \Auth::user()->id;
+
+        $user = \App\User::with('documents')->find($userId);
+
+        return view('home')->with(compact('user'));
     }
 
     public function upload() {
@@ -54,5 +58,26 @@ class HomeController extends Controller
         $user->documents()->save($fileModel);
 
         return $file->move($publicPath, $fileName);
+    }
+
+    public function download($userId, $documentId) {
+        $document = \App\Document::find($documentId);
+
+        $publicPath = public_path().'/documents/'.$userId;
+
+        return \Response::download($publicPath.'/'.$document->name);
+    
+    }
+
+    public function destroy($userId, $documentId) {
+        $document = \App\Document::find($documentId);
+
+        $publicPath = public_path().'/documents/'.$userId;
+
+        $document->delete();
+
+        unlink($publicPath.'/'.$document->name);
+
+        return redirect()->back()->with('success', 'Arquivo removido com sucesso!');
     }
 }

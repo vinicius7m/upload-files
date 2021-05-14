@@ -15,10 +15,11 @@ class CreateDocumentTable extends Migration
         Schema::create('documents', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('uuid');
-            $table->string('title');
-            $table->string('number');
-            $table->string('year');
+            $table->string('name');
+            $table->string('uuid')->nullable();
+            $table->string('title')->nullable();
+            $table->string('number')->nullable();
+            $table->string('year')->nullable();
 
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');

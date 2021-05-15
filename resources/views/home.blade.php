@@ -82,7 +82,7 @@
                 dataType: 'json',
                 formData: {_token: $fileupload.data('token'), userId: $fileupload.data('userId')},
                 done: function (e, data) {
-                    document.location.reload();
+                    window.location.reload();
                 },
                 progressall: function (e, data) {
                     var progress = parseInt(data.loaded / data.total * 100, 10);
